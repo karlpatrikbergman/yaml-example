@@ -25,8 +25,12 @@ repositories {
 }
 /** Dependency settings **/
 dependencies {
-    compile("org.projectlombok:lombok:1.16.10")
+    compile "org.slf4j:slf4j-api:1.7.25"
+    compile "org.slf4j:slf4j-simple:1.7.25"
+    compile("org.projectlombok:lombok:1.16.16")
     compile("org.yaml:snakeyaml:1.17")
+    compile 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.9.0.pr3'
+    compile "com.fasterxml.jackson.core:jackson-databind:2.9.0.pr3"
     compile('se.patrikbergman.java:java-utilities:1.0-SNAPSHOT')
 
     testCompile("junit:junit:4.12")

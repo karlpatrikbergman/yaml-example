@@ -1,0 +1,15 @@
+---
+&1 name: John Smith
+age: 47
+father:
+  name: Bill Smith
+  age: 75
+children:
+  child1:
+    name: Bill
+    age: 5
+    father: *1
+  child2:
+    name: Lisa
+    age: 10
+    father: *1

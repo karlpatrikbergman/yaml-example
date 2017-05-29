@@ -1,0 +1,4 @@
+&1 name: "first"
+next:
+  &2 name: "second"
+  next: *1
