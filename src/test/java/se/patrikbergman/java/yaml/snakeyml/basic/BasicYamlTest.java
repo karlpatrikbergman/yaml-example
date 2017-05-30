@@ -2,7 +2,7 @@ package se.patrikbergman.java.yaml.snakeyml.basic;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
-import se.patrikbergman.java.yaml.ObjectFromFileUtilSnakeYaml;
+import se.patrikbergman.java.yaml.snakeyml.ObjectFromFileUtilSnakeYaml;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package se.patrikbergman.java.yaml;
+package se.patrikbergman.java.yaml.snakeyml;
 
 import lombok.extern.slf4j.Slf4j;
 import org.yaml.snakeyaml.DumperOptions;
