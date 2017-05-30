@@ -4,32 +4,36 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import lombok.extern.slf4j.Slf4j;
+import se.patrikbergman.java.utility.resource.ResourceInputStream;
 
-public enum JacksonYamlUtil {
+import java.io.IOException;
+import java.io.InputStream;
+
+@Slf4j
+public enum ObjectFromFileUtilJackson {
     INSTANCE;
 
-    final ObjectMapper mapper;
+    private final ObjectMapper mapper;
 
-    JacksonYamlUtil() {
+    public <T> T getObject(String path, Class<T> clazz) throws RuntimeException {
+        try {
+            InputStream in = new ResourceInputStream(path);
+            final ObjectReader reader = mapper.reader().forType(clazz);
+            return reader.readValue(in);
+        } catch (IOException e) {
+            log.error(e.getMessage());
+            throw new RuntimeException(e.getMessage());
+        }
+    }
+
+    ObjectFromFileUtilJackson() {
         mapper = new ObjectMapper(new YAMLFactory());
         SimpleModule module = new SimpleModule();
-//        module.addDeserializer(Slot.SlotKeyType.class, new SlotKeyTypeDeserializer());
-//        module.addDeserializer(BoardType.class, new BoardTypeDeserializer());
-//        module.addDeserializer(LinePortType.class, new LinePortTypeDeserializer());
-//        module.addDeserializer(ClientPortType.class, new ClientPortTypeDeserializer());
         mapper.registerModule(module);
-
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
         mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-    }
-
-    public ObjectReader getReader() {
-        return mapper.reader();
-    }
-
-    public ObjectMapper getMapper() {
-        return mapper;
     }
 }

@@ -1,0 +1,15 @@
+age: 27
+job: dev
+name: me
+skills:
+  devSkill: !!se.patrikbergman.java.yaml.snakeyml.customtype.DevSkill {
+    name: Development skill,
+    description: Good to have developer,
+    language: Java
+  }
+  sportSkill: !!se.patrikbergman.java.yaml.snakeyml.customtype.SportSkill {
+      name: Sport skill,
+      description: Average runner,
+      sport: Running
+    }
+
