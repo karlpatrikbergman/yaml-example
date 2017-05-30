@@ -34,5 +34,7 @@ public class PersonDeserializationTest {
 
         log.info(person.toString());
 
+        person.getSkills().forEach((k,v) -> log.info("key: "+k+" value:"+v.getAll()));
+
     }
 }

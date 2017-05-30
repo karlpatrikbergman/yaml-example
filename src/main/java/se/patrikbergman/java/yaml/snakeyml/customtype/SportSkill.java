@@ -7,4 +7,9 @@ public class SportSkill implements BaseSkill {
     private String name;
     private String description;
     private String sport;
+
+    @Override
+    public String getAll() {
+        return name + " " + description + " " + sport;
+    }
 }
