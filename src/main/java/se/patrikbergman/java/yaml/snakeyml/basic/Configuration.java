@@ -1,4 +1,4 @@
-package se.patrikbergman.java.yaml.basic;
+package se.patrikbergman.java.yaml.snakeyml.basic;
 
 import lombok.Data;
 

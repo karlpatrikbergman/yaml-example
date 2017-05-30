@@ -1,7 +1,8 @@
-package se.patrikbergman.java.yaml.basic;
+package se.patrikbergman.java.yaml.snakeyml.basic;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
+import se.patrikbergman.java.yaml.ObjectFromFileUtilSnakeYaml;
 
 import java.io.IOException;
 
@@ -13,7 +14,7 @@ public class BasicYamlTest {
 
     @Test
     public void test() throws IOException {
-        Configuration configuration = YamlToConfigurationParser.parse("basic/configuration.yml");
+        Configuration configuration = ObjectFromFileUtilSnakeYaml.INSTANCE.getObject("snakeyml/basic/configuration.yml", Configuration.class);
         assertNotNull(configuration);
         Connection connection = configuration.getConnection();
         assertEquals("jdbc:mysql://localhost:3306/db", connection.getUrl());

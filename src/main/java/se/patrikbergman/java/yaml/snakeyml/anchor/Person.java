@@ -1,4 +1,4 @@
-package se.patrikbergman.java.yaml.advanced;
+package se.patrikbergman.java.yaml.snakeyml.anchor;
 
 
 import lombok.Data;

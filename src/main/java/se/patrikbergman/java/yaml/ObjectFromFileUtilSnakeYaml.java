@@ -1,5 +1,6 @@
-package se.patrikbergman.java.yaml.advanced;
+package se.patrikbergman.java.yaml;
 
+import lombok.extern.slf4j.Slf4j;
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
@@ -10,11 +11,18 @@ import se.patrikbergman.java.utility.resource.ResourceInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-final class YamlParser {
+@Slf4j
+public enum ObjectFromFileUtilSnakeYaml {
+    INSTANCE;
 
-    public static Person parse(String resourceOnClassPath) throws IOException {
-        InputStream in = new ResourceInputStream(resourceOnClassPath);
-        return getYaml().loadAs(in, Person.class);
+    public <T> T getObject(String path, Class<T> clazz) throws RuntimeException {
+        try {
+            InputStream in = new ResourceInputStream(path);
+            return getYaml().loadAs(in, clazz);
+        } catch (IOException e) {
+            log.error(e.getMessage());
+            throw new RuntimeException(e.getMessage());
+        }
     }
 
     private static Yaml getYaml() {

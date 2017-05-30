@@ -28,4 +28,8 @@ public enum JacksonYamlUtil {
     public ObjectReader getReader() {
         return mapper.reader();
     }
+
+    public ObjectMapper getMapper() {
+        return mapper;
+    }
 }

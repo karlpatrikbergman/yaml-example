@@ -1,7 +1,8 @@
-package se.patrikbergman.java.yaml.dockercompose;
+package se.patrikbergman.java.yaml.snakeyml.dockercompose;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
+import se.patrikbergman.java.yaml.ObjectFromFileUtilSnakeYaml;
 
 import java.io.IOException;
 import java.util.List;
@@ -15,7 +16,9 @@ public class DockerComposeYamlTest {
 
     @Test
     public void test() throws IOException {
-        DockerCompose dockerCompose = YamlToJavaParser.parse("dockercompose/docker-compose.yml");
+//        DockerCompose dockerCompose = YamlToJavaParser.parse("dockercompose/docker-compose.yml");
+
+        DockerCompose dockerCompose = ObjectFromFileUtilSnakeYaml.INSTANCE.getObject("snakeyml/dockercompose/docker-compose.yml", DockerCompose.class);
 
         Service alarmService = dockerCompose.getServices().get("alarmservice");
         assertNotNull(alarmService);

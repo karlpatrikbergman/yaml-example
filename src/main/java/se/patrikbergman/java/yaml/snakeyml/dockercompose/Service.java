@@ -1,4 +1,4 @@
-package se.patrikbergman.java.yaml.dockercompose;
+package se.patrikbergman.java.yaml.snakeyml.dockercompose;
 
 import lombok.Data;
 

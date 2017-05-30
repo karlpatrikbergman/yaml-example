@@ -1,4 +1,4 @@
-package se.patrikbergman.java.yaml.jackson;
+package se.patrikbergman.java.yaml.jackson.anchor1;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
