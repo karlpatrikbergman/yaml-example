@@ -1,4 +1,0 @@
-boards:
-  !se.patrikbergman.java.yaml.jackson.customtype.Tpd10gbe
-  slot1:
-    name: tpd10gbe

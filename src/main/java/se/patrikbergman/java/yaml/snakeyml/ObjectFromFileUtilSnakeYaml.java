@@ -7,12 +7,13 @@ import org.yaml.snakeyaml.constructor.Constructor;
 import org.yaml.snakeyaml.introspector.PropertyUtils;
 import org.yaml.snakeyaml.representer.Representer;
 import se.patrikbergman.java.utility.resource.ResourceInputStream;
+import se.patrikbergman.java.yaml.ObjectFromFileUtil;
 
 import java.io.IOException;
 import java.io.InputStream;
 
 @Slf4j
-public enum ObjectFromFileUtilSnakeYaml {
+public enum ObjectFromFileUtilSnakeYaml implements ObjectFromFileUtil {
     INSTANCE;
 
     public <T> T getObject(String path, Class<T> clazz) throws RuntimeException {

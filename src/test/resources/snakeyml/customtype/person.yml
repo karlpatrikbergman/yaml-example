@@ -4,12 +4,12 @@ name: me
 skills:
   devSkill: !!se.patrikbergman.java.yaml.snakeyml.customtype.DevSkill {
     name: Development skill,
-    description: Good to have developer,
-    language: Java
+    groupOrTable: Good to have developer,
+    module: Java
   }
   sportSkill: !!se.patrikbergman.java.yaml.snakeyml.customtype.SportSkill {
-      name: Sport skill,
-      description: Average runner,
-      sport: Running
-    }
+    name: Sport skill,
+    groupOrTable: Average runner,
+    sport: Running
+  }
 

@@ -16,6 +16,8 @@ import static org.junit.Assert.assertNotNull;
 @Slf4j
 public class PersonDeserializationTest {
 
+    private final String path = "snakeyml/customtype/person.yml";
+
     @Test
     public void test() throws IOException {
         DumperOptions options = new DumperOptions();
@@ -25,7 +27,7 @@ public class PersonDeserializationTest {
         propertyUtils.setSkipMissingProperties(true);
         Yaml yaml = new Yaml(new Constructor(), representer, options);
 
-        ResourceInputStream resourceInputStream = new ResourceInputStream("snakeyml/customotype/person.yml");
+        ResourceInputStream resourceInputStream = new ResourceInputStream(path);
         Person person = (Person) yaml.loadAs(resourceInputStream, Person.class);
 
         assertNotNull(person.getName());

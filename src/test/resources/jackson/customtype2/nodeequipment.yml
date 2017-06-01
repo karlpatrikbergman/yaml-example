@@ -1,0 +1,15 @@
+--- !<.NodeEquipment>
+boards:
+  slot1: !<se.patrikbergman.java.yaml.jackson.customtype2.Tpd10gbe>
+    name: "tpd10gbe"
+    client: "client"
+    groupOrTable: "if"
+    module: "wdm"
+    tpd10gbeSpecificField: "yodoyodo"
+  slot2: !<se.patrikbergman.java.yaml.jackson.customtype2.Tpmr2500>
+      name: "tpmr2500"
+      client: "mrt"
+      groupOrTable: "if"
+      module: "mrt"
+      tpmr2500SpecificField: "yadayada"
+

@@ -1,0 +1,18 @@
+{
+  "@class" : ".Zoo",
+  "name" : "Samba Wild Park",
+  "city" : "Paz",
+  "animals" : [ {
+    "@class" : "se.patrikbergman.java.yaml.jackson.polymorphism.Lion",
+    "name" : "Simba",
+    "sound" : "Roar",
+    "type" : "carnivorous",
+    "endangered" : true
+  }, {
+    "@class" : "se.patrikbergman.java.yaml.jackson.polymorphism.Elephant",
+    "name" : "Manny",
+    "sound" : "trumpet",
+    "type" : "herbivorous",
+    "endangered" : false
+  } ]
+}
