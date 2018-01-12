@@ -13,19 +13,20 @@ import java.util.Map;
 public class NodeEquipmentSerializationTest {
     @Test
     public void test() throws IOException {
-        Tpd10gbe tpd10gbe = new Tpd10gbe();
-        tpd10gbe.setName("tpd10gbe");
-        tpd10gbe.setClient("client");
-        tpd10gbe.setGroupOrTable("if");
-        tpd10gbe.setModule("wdm");
-        tpd10gbe.setTpd10gbeSpecificField("yodoyodo");
+        Tpd10gbe tpd10gbe = Tpd10gbe.builder()
+                .name("tpd10gbe")
+                .client("client")
+                .groupOrTable("if")
+                .module("client")
+                .tpd10gbeSpecificField("yadayada")
+                .build();
 
-        NodeEquipment nodeEquipment = new NodeEquipment();
         Map<String, Board> boards = new HashMap<>();
         boards.put("slot1", tpd10gbe);
-        nodeEquipment.setBoards(boards);
 
-//        ObjectMapper mapper = new ObjectMapper();
+        NodeEquipment nodeEquipment = NodeEquipment.builder()
+                .boards(boards)
+                .build();
         ObjectMapper mapper = ObjectFromFileUtilJackson.INSTANCE.getMapper();
         log.info(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(nodeEquipment));
     }

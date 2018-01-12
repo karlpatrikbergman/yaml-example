@@ -1,10 +1,12 @@
 package se.patrikbergman.java.yaml.jackson.customtype2;
 
-import lombok.Data;
+import lombok.Builder;
+import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@Data
+@Value
+@Builder
 public class Tpd10gbe implements Board {
     private String name;
     private String client;
